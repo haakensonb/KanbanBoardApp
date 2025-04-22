@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using Backend.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -5,6 +8,19 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+
+builder.Services.AddDbContext<BoardContext>(opt =>
+{
+    opt.UseInMemoryDatabase("KanbanBoard");
+});
+builder.Services.AddDbContext<BoardListContext>(opt =>
+{
+    opt.UseInMemoryDatabase("KanbanBoard");
+});
+builder.Services.AddDbContext<CardContext>(opt =>
+{
+    opt.UseInMemoryDatabase("KanbanBoard");
+});
 
 var app = builder.Build();
 
