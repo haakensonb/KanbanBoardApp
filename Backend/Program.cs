@@ -9,15 +9,7 @@ builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
-builder.Services.AddDbContext<BoardContext>(opt =>
-{
-    opt.UseInMemoryDatabase("KanbanBoard");
-});
-builder.Services.AddDbContext<BoardListContext>(opt =>
-{
-    opt.UseInMemoryDatabase("KanbanBoard");
-});
-builder.Services.AddDbContext<CardContext>(opt =>
+builder.Services.AddDbContext<BackendContext>(opt =>
 {
     opt.UseInMemoryDatabase("KanbanBoard");
 });
