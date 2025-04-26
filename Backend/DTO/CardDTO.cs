@@ -1,6 +1,8 @@
-namespace Backend.Models;
+using Backend.Models;
 
-public class CardDTO
+namespace Backend.DTO;
+
+public record CardDTO
 {
     public long Id { get; set; }
     public string Title { get; set; } = "Example Card";
@@ -9,6 +11,12 @@ public class CardDTO
 
     public static CardDTO ToDTO(Card card)
     {
-        return new CardDTO { Id = card.Id, Title = card.Title, Description = card.Description, BoardListId = card.BoardListId };
+        return new CardDTO
+        {
+            Id = card.Id,
+            Title = card.Title,
+            Description = card.Description,
+            BoardListId = card.BoardListId
+        };
     }
 }

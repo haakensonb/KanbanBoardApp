@@ -1,6 +1,8 @@
-namespace Backend.Models;
+using Backend.Models;
 
-public class BoardListDTO
+namespace Backend.DTO;
+
+public record BoardListDTO
 {
     public long Id { get; set; }
     public string Title { get; set; } = "Example List";

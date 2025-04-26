@@ -1,8 +1,8 @@
-using System.Collections;
+using Backend.Models;
 
-namespace Backend.Models;
+namespace Backend.DTO;
 
-public class BoardDTO
+public record BoardDTO
 {
     public long Id { get; set; }
     public string Name { get; set; } = "Example Board";
